@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{B84E19BA-08C2-ADDC-72A0-0C2EEF2D37C8}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Card.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Dude.cs" Line="26" Column="103" />
+      <File FileName="Assets/Scripts/Deck.cs" />
+      <File FileName="Assets/Scripts/Card.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="miz" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Card.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f5192032-010f-4db6-ab80-6fc92fbcdbb7" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
