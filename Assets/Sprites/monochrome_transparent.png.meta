@@ -2362,7 +2362,7 @@ TextureImporter:
     second: monochrome_transparent_785
   - first:
       213: 1910389381771402464
-    second: monochrome_transparent_786
+    second: card-holder
   - first:
       213: -5700095724817035496
     second: h1
@@ -20076,7 +20076,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_786
+      name: card-holder
       rect:
         serializedVersion: 2
         x: 323

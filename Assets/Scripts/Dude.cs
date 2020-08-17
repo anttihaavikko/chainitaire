@@ -28,7 +28,7 @@ public class Dude : MonoBehaviour
 
             if(best)
             {
-                Tweener.Instance.MoveTo(transform, best.transform.position, 0.25f, 0.03f, TweenEasings.QuadraticEaseInOut);
+                Tweener.Instance.MoveTo(transform, best.transform.position, 0.25f, 0.06f, TweenEasings.QuadraticEaseInOut);
                 suit = best.GetSuit();
                 value = best.GetValue();
                 anim.SetTrigger("jump");
