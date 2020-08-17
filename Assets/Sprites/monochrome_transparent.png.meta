@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8409067677610051592
-    second: monochrome_transparent_0
+    second: grass3
   - first:
       213: 3698541550111852805
-    second: monochrome_transparent_1
+    second: stones1
   - first:
       213: 4744201316748320882
-    second: monochrome_transparent_2
+    second: stones2
   - first:
       213: -3631099299730448726
-    second: monochrome_transparent_3
+    second: stones3
   - first:
       213: -8072421411604021928
-    second: monochrome_transparent_4
+    second: grass1
   - first:
       213: -8767943310877673325
-    second: monochrome_transparent_5
+    second: grass2
   - first:
       213: 1173734479524125399
     second: monochrome_transparent_6
@@ -148,7 +148,7 @@ TextureImporter:
     second: monochrome_transparent_47
   - first:
       213: 6206596976213065198
-    second: monochrome_transparent_48
+    second: tree1
   - first:
       213: -7162040614057053401
     second: monochrome_transparent_49
@@ -160,7 +160,7 @@ TextureImporter:
     second: monochrome_transparent_51
   - first:
       213: 1982777705515825379
-    second: monochrome_transparent_52
+    second: tree2
   - first:
       213: -6207972344769258568
     second: monochrome_transparent_53
@@ -904,16 +904,16 @@ TextureImporter:
     second: monochrome_transparent_299
   - first:
       213: 6389468720210305819
-    second: monochrome_transparent_300
+    second: plant1
   - first:
       213: -2908012172702769709
-    second: monochrome_transparent_301
+    second: plant2
   - first:
       213: -8453690833116868668
-    second: monochrome_transparent_302
+    second: plant4
   - first:
       213: 3578458728198753320
-    second: monochrome_transparent_303
+    second: plant5
   - first:
       213: 7994560758122032940
     second: monochrome_transparent_304
@@ -1483,10 +1483,10 @@ TextureImporter:
     second: monochrome_transparent_492
   - first:
       213: -6017688072705118759
-    second: monochrome_transparent_493
+    second: bonfire
   - first:
       213: 1439878172608150826
-    second: monochrome_transparent_494
+    second: flame
   - first:
       213: 5207011016009670469
     second: monochrome_transparent_495
@@ -1666,7 +1666,7 @@ TextureImporter:
     second: monochrome_transparent_553
   - first:
       213: -5587299102981429451
-    second: monochrome_transparent_554
+    second: boom
   - first:
       213: 6038165823265522305
     second: monochrome_transparent_555
@@ -1813,16 +1813,16 @@ TextureImporter:
     second: monochrome_transparent_602
   - first:
       213: -9149607823871999462
-    second: monochrome_transparent_603
+    second: snowflake
   - first:
       213: 1799233591655848234
-    second: monochrome_transparent_604
+    second: star
   - first:
       213: 6056709538836698356
-    second: monochrome_transparent_605
+    second: sparkle
   - first:
       213: 7998926461726095673
-    second: monochrome_transparent_606
+    second: blling
   - first:
       213: 5154078715776060458
     second: monochrome_transparent_607
@@ -3570,7 +3570,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monochrome_transparent_0
+      name: grass3
       rect:
         serializedVersion: 2
         x: 17
@@ -3591,7 +3591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_1
+      name: stones1
       rect:
         serializedVersion: 2
         x: 34
@@ -3612,7 +3612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_2
+      name: stones2
       rect:
         serializedVersion: 2
         x: 51
@@ -3633,7 +3633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_3
+      name: stones3
       rect:
         serializedVersion: 2
         x: 68
@@ -3654,7 +3654,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_4
+      name: grass1
       rect:
         serializedVersion: 2
         x: 85
@@ -3675,7 +3675,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_5
+      name: grass2
       rect:
         serializedVersion: 2
         x: 102
@@ -4578,7 +4578,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_48
+      name: tree1
       rect:
         serializedVersion: 2
         x: 17
@@ -4662,7 +4662,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_52
+      name: tree2
       rect:
         serializedVersion: 2
         x: 85
@@ -9870,7 +9870,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_300
+      name: plant1
       rect:
         serializedVersion: 2
         x: 221
@@ -9891,7 +9891,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_301
+      name: plant2
       rect:
         serializedVersion: 2
         x: 238
@@ -9912,7 +9912,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_302
+      name: plant4
       rect:
         serializedVersion: 2
         x: 255
@@ -9933,7 +9933,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_303
+      name: plant5
       rect:
         serializedVersion: 2
         x: 272
@@ -13923,7 +13923,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_493
+      name: bonfire
       rect:
         serializedVersion: 2
         x: 238
@@ -13944,7 +13944,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_494
+      name: flame
       rect:
         serializedVersion: 2
         x: 255
@@ -15204,7 +15204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_554
+      name: boom
       rect:
         serializedVersion: 2
         x: 459
@@ -16233,7 +16233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_603
+      name: snowflake
       rect:
         serializedVersion: 2
         x: 476
@@ -16254,7 +16254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_604
+      name: star
       rect:
         serializedVersion: 2
         x: 493
@@ -16275,7 +16275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_605
+      name: sparkle
       rect:
         serializedVersion: 2
         x: 510
@@ -16296,7 +16296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_606
+      name: blling
       rect:
         serializedVersion: 2
         x: 527

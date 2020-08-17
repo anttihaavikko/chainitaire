@@ -88,7 +88,7 @@ public class Card : MonoBehaviour
         value = v;
         spriteRenderer.sprite = spr;
         spriteMask.sprite = spr;
-        suitSprite.color = s == 0 || s == 3 ? Color.black : Color.red;
+        suitSprite.color = s == 0 || s == 3 ? Color.black : deck.red;
     }
 
     public int GetValue()

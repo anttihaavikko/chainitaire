@@ -18,6 +18,8 @@ public class Dude : MonoBehaviour
 
     public void TryMove()
     {
+        //Debug.Log("Trying to move @ " + Time.time);
+
         var neighbors = GetNeighbors().Where(n => n != null && CanJumpTo(n));
 
         if(neighbors.Any())

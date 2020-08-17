@@ -12,6 +12,7 @@ public class Deck : MonoBehaviour
     public Sprite[] cardSprites;
     public Dude dude;
     public Image currentIndicator;
+    public Color red;
 
     private Stack<SuitAndValue> deck;
 
@@ -54,7 +55,7 @@ public class Deck : MonoBehaviour
         card.deck = this;
         var spr = cardSprites[c.suit * 13 + c.value];
         card.SetSuitAndValue(c.suit, c.value, spr);
-        Debug.Log("Now adding " + c.suit + " => " + c.value);
+        //Debug.Log("Now adding " + c.suit + " => " + c.value);
         Tweener.Instance.MoveTo(card.transform, spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
     }
 
