@@ -57,6 +57,14 @@ public class Deck : MonoBehaviour
         card.SetSuitAndValue(c.suit, c.value, spr);
         //Debug.Log("Now adding " + c.suit + " => " + c.value);
         Tweener.Instance.MoveTo(card.transform, spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+
+        if (dude.Matches(card))
+        {
+            this.StartCoroutine(() =>
+            {
+                EffectManager.Instance.AddEffect(0, spawnPoint.position);
+            }, 0.2f);
+        }
     }
 
     public void SetPreview(Card c)

@@ -6,9 +6,13 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour {
 
 	public AutoEnd[] effects;
+    public DamageNumber numberPrefab;
 
     [SerializeField]
     private Queue<AutoEnd>[] effectPool;
+
+    [SerializeField]
+    private TextEffectPool textPool;
 
     // ==================
 
@@ -51,6 +55,14 @@ public class EffectManager : MonoBehaviour {
 		return e.gameObject;
 	}
 
+    public void AddText(string message, Vector3 position, float scale = 1f)
+    {
+        var t = textPool.Get();
+        t.SetNumber(message, scale);
+        t.transform.position = position;
+        t.QueueRemove();
+    }
+
     private AutoEnd Get(int index)
     {
         if (!effectPool[index].Any())
@@ -78,5 +90,9 @@ public class EffectManager : MonoBehaviour {
     {
         obj.gameObject.SetActive(false);
         effectPool[obj.Pool].Enqueue(obj);
+    }
+
+    public void ReturnTextToPool(DamageNumber obj) {
+        textPool.ReturnToPool(obj);
     }
 }

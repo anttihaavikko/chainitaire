@@ -42,6 +42,7 @@ public class Card : MonoBehaviour
 
     internal bool IsMatch(int s, int v)
     {
+        Debug.Log("Comparing" + s + "=" + suit + " and " + v + "=" + value);
         return s == suit || v == value + 1;
     }
 

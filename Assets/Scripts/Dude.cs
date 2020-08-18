@@ -47,7 +47,12 @@ public class Dude : MonoBehaviour
 
                 this.StartCoroutine(() =>
                 {
-                    comboScore.Add(best.GetValue() * combo);
+                    var amt = best.GetValue();
+                    comboScore.Add(amt * combo);
+
+                    this.StartCoroutine(() => {
+                        EffectManager.Instance.AddText(amt + "<size=3>x" + (combo - 1) + "</size>", transform.position + Vector3.up * 0.2f);
+                    }, 0.25f);
 
                     Instantiate(blockPrefab, best.transform.position, Quaternion.identity);
                     Destroy(best.gameObject);
@@ -72,14 +77,19 @@ public class Dude : MonoBehaviour
         combo = 1;
     }
 
-    private bool CanJumpTo(Card n)
+    private bool CanJumpTo(Card card)
     {
         if(suit == -1 || value == -1)
         {
             return true;
         }
 
-        return n.IsMatch(suit, value);
+        return Matches(card);
+    }
+
+    public bool Matches(Card c)
+    {
+        return c.IsMatch(suit, value);
     }
 
     private List<Card> GetNeighbors()
