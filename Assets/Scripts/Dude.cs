@@ -8,8 +8,10 @@ public class Dude : MonoBehaviour
     private int suit = -1, value = -1;
     public Animator anim;
     public GameObject blockPrefab;
+    public NumberScroller totalScore, comboScore;
 
     private float scale;
+    private int combo = 1;
 
     private void Start()
     {
@@ -45,15 +47,29 @@ public class Dude : MonoBehaviour
 
                 this.StartCoroutine(() =>
                 {
+                    comboScore.Add(best.GetValue() * combo);
+
                     Instantiate(blockPrefab, best.transform.position, Quaternion.identity);
                     Destroy(best.gameObject);
+
+                    combo++;
                 }, 0.3f);
 
                 return;
             }
         }
 
+        var amount = comboScore.GetValue();
+
+        if(amount > 0)
+        {
+            totalScore.Add(amount);
+            comboScore.Clear();
+            //this.StartCoroutine(() => comboScore.Clear(), 0.2f);
+        }
+
         deck.AddCard();
+        combo = 1;
     }
 
     private bool CanJumpTo(Card n)
