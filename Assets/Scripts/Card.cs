@@ -42,7 +42,6 @@ public class Card : MonoBehaviour
 
     internal bool IsMatch(int s, int v)
     {
-        Debug.Log("Comparing" + s + "=" + suit + " and " + v + "=" + value);
         return s == suit || v == value + 1;
     }
 
@@ -59,7 +58,8 @@ public class Card : MonoBehaviour
 
         offset = transform.position - mouseInWorld;
 
-        sortingGroup.sortingOrder = 200;
+        deck.dude.sortingGroup.sortingOrder = -1;
+        sortingGroup.sortingOrder = 0;
     }
 
     public void Drop()
@@ -80,7 +80,8 @@ public class Card : MonoBehaviour
         holding = false;
         locked = true;
 
-        sortingGroup.sortingOrder = 0;
+        deck.dude.sortingGroup.sortingOrder = 5;
+        sortingGroup.sortingOrder = -2;
     }
 
     public void SetSuitAndValue(int s, int v, Sprite spr)

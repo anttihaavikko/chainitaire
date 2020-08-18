@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Dude : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Dude : MonoBehaviour
     public Animator anim;
     public GameObject blockPrefab;
     public NumberScroller totalScore, comboScore;
+    public SortingGroup sortingGroup;
 
     private float scale;
     private int combo = 1;
