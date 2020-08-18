@@ -64,6 +64,9 @@ public class Card : MonoBehaviour
 
     public void Drop()
     {
+        if (locked)
+            return;
+
         var p = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
         var hit = Physics2D.OverlapCircleAll(p, 0.1f);
 

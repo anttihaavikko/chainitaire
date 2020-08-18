@@ -11,6 +11,8 @@ public class Dude : MonoBehaviour
     public GameObject blockPrefab;
     public NumberScroller totalScore, comboScore;
     public SortingGroup sortingGroup;
+    public EffectCamera cam;
+    public Appearer comboDisplay;
 
     private float scale;
     private int combo = 1;
@@ -49,11 +51,18 @@ public class Dude : MonoBehaviour
 
                 this.StartCoroutine(() =>
                 {
+                    comboDisplay.Show();
+
                     var amt = best.GetValue();
                     comboScore.Add(amt * combo);
 
                     this.StartCoroutine(() => {
                         EffectManager.Instance.AddText(amt + "<size=3>x" + (combo - 1) + "</size>", transform.position + Vector3.up * 0.2f);
+                    }, 0.25f);
+
+                    this.StartCoroutine(() => {
+                        cam.BaseEffect(0.1f);
+                        EffectManager.Instance.AddEffect(1, transform.position + Vector3.down * 0.5f);
                     }, 0.25f);
 
                     Instantiate(blockPrefab, best.transform.position, Quaternion.identity);
@@ -70,9 +79,12 @@ public class Dude : MonoBehaviour
 
         if(amount > 0)
         {
-            totalScore.Add(amount);
-            comboScore.Clear();
-            //this.StartCoroutine(() => comboScore.Clear(), 0.2f);
+            this.StartCoroutine(() =>
+            {
+                totalScore.Add(amount);
+                comboScore.Clear();
+                this.StartCoroutine(comboDisplay.Hide, 0.5f);
+            }, 0.7f);
         }
 
         deck.AddCard();

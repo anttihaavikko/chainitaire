@@ -11,10 +11,8 @@ public class EffectCamera : MonoBehaviour {
 	private float prevCutoff = 1f;
 	private float cutoffPos;
 	private float transitionTime = 0.5f;
-    public CinemachineImpulseSource impulseSource;
-    public List<CameraRig> cameras;
 
-    private Volume ppVolume;
+    public Volume ppVolume;
 	private float chromaAmount, splitAmount;
     private float defaultLensDistortion;
     private float bulgeAmount;
@@ -22,6 +20,7 @@ public class EffectCamera : MonoBehaviour {
 	private float chromaSpeed = 1f;
     private float splitSpeed = 1f;
     private float colorAmount, colorSpeed = 1f;
+    private Vector3 originalPosition;
 
     private float shakeAmount = 0f, shakeTime = 0f;
     private float totalShakeTime;
@@ -34,7 +33,6 @@ public class EffectCamera : MonoBehaviour {
     private ColorAdjustments cg;
 
 	void Start() {
-        ppVolume = GetComponent<Volume>();
 
         if (ppVolume)
         {
@@ -45,11 +43,8 @@ public class EffectCamera : MonoBehaviour {
 
             bulgeAmount = defaultLensDistortion = ld.intensity.value;
         }
-    }
 
-    public void SetMainCameraPosition(Vector3 pos)
-    {
-        cameras[0].originalPosition = pos;
+        originalPosition = transform.position;
     }
 
 	void Update() {
@@ -79,18 +74,15 @@ public class EffectCamera : MonoBehaviour {
 
             var mod = Mathf.SmoothStep(0f, 1f, shakeTime / totalShakeTime);
             shakeTime -= Time.deltaTime;
-            cameras.ForEach(c => {
-                var diff = new Vector3(Random.Range(-shakeAmount, shakeAmount) * mod, Random.Range(-shakeAmount, shakeAmount) * mod, 0);
-                c.camera.transform.position += diff * c.camera.m_Lens.OrthographicSize * 0.02f;
-                c.camera.transform.rotation = Quaternion.Euler(0, 0, Random.Range(-shakeAmount, shakeAmount) * mod);
-            });
+
+            var diff = new Vector3(Random.Range(-shakeAmount, shakeAmount) * mod, Random.Range(-shakeAmount, shakeAmount) * mod, 0);
+            transform.position += diff * 0.02f;
+            transform.rotation = Quaternion.Euler(0, 0, Random.Range(-shakeAmount, shakeAmount) * mod);
         }
         else
         {
-            cameras.ForEach(c => {
-                c.camera.transform.position = Vector3.MoveTowards(c.camera.transform.position, c.originalPosition, Time.deltaTime * 20f);
-                c.camera.transform.rotation = Quaternion.RotateTowards(c.camera.transform.rotation, Quaternion.identity, Time.deltaTime);
-            });
+            transform.position = Vector3.MoveTowards(transform.position, originalPosition, Time.deltaTime * 20f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, Time.deltaTime);
         }
     }
 
@@ -122,10 +114,10 @@ public class EffectCamera : MonoBehaviour {
 
 	public void BaseEffect(float mod = 1f) {
         //impulseSource.GenerateImpulse(Vector3.one * mod * 1000f);
-        Shake(5f * mod, 1f * mod);
-        Chromate(1.5f * mod, 2f * mod);
+        Shake(7f * mod, 1f * mod);
+        Chromate(2.5f * mod, 3f * mod);
         Bulge(defaultLensDistortion * 2f * mod, 1f * mod);
-        Decolor(0.75f * mod, 3f * mod);
+        Decolor(0.5f * mod, 3f * mod);
 
         //Time.timeScale = Mathf.Clamp(1f - 0.2f * mod, 0f, 1f);
     }
