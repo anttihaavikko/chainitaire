@@ -2431,6 +2431,7 @@ MonoBehaviour:
   dude: {fileID: 1762697433}
   currentIndicator: {fileID: 1377411023}
   red: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
+  board: {fileID: 2121055243}
 --- !u!114 &495057406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10575,7 +10576,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 4345164983049744157, guid: 4a5d2808eb1c94923bee172760aba067,
     type: 3}
+  markerPrefab: {fileID: 1242820850947714044, guid: ad9d068c6b73147a686964fa7d238701,
+    type: 3}
   dude: {fileID: 1762697433}
+  markerLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &2125346621
 GameObject:
   m_ObjectHideFlags: 0

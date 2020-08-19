@@ -13,6 +13,7 @@ public class Deck : MonoBehaviour
     public Dude dude;
     public Image currentIndicator;
     public Color red;
+    public Board board;
 
     private Stack<SuitAndValue> deck;
 

@@ -60,6 +60,8 @@ public class Card : MonoBehaviour
 
         deck.dude.sortingGroup.sortingOrder = -1;
         sortingGroup.sortingOrder = 0;
+
+        deck.board.ShowMarkers();
     }
 
     public void Drop()
@@ -68,14 +70,18 @@ public class Card : MonoBehaviour
             return;
 
         var p = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
-        var hit = Physics2D.OverlapCircleAll(p, 0.1f);
+        var hit = Physics2D.OverlapCircle(p, 0.1f, deck.board.markerLayer);
 
-        if(hit.Length > 1)
+        deck.board.HideMarkers();
+
+        if (!hit)
         {
             Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
             holding = false;
             return;
         }
+
+        deck.board.DeactivateMarker(hit.gameObject);
 
         this.StartCoroutine(deck.dude.TryMove, 0.1f);
 

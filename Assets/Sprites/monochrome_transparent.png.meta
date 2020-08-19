@@ -2104,7 +2104,7 @@ TextureImporter:
     second: monochrome_transparent_699
   - first:
       213: -1582526176678257878
-    second: monochrome_transparent_700
+    second: marker
   - first:
       213: 2837374629121264509
     second: monochrome_transparent_701
@@ -18270,7 +18270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_700
+      name: marker
       rect:
         serializedVersion: 2
         x: 493
