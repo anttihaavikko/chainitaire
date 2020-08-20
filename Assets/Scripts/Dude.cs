@@ -130,7 +130,13 @@ public class Dude : MonoBehaviour
         deck.AddCard();
         combo = 1;
 
-        CheckForEnd();
+        this.StartCoroutine(CheckForEnd, 0.5f);
+    }
+
+    public void Die()
+    {
+        cam.BaseEffect(0.2f);
+        EffectManager.Instance.AddEffect(1, transform.position + Vector3.down * 0.5f);
     }
 
     void CheckForEnd()
@@ -138,7 +144,11 @@ public class Dude : MonoBehaviour
         var spots = GetTakenNeighbors().Where(s => s != null);
 
         if(spots.Count() == 4)
+        {
+            anim.SetTrigger("die");
+            Invoke("Die", 0.4f);
             Debug.Log("Game Over!");
+        }
     }
 
     void NextText()
