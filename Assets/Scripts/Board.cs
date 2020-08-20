@@ -47,9 +47,18 @@ public class Board : MonoBehaviour
             }
         }
 
+        var possibleStarts = cells.Where(CanBeStart);
         var start = cells.OrderBy(c => Random.value).First(c => c.tag == "Island");
         start.tag = "Start";
         dude.transform.position = start.transform.position;
+    }
+
+    private bool CanBeStart(GameObject g)
+    {
+        if (g.tag != "Island") return false;
+
+        var neighbors = GetNeighbors(g.transform.position).Count(go => go != null);
+        return g.tag == "Island" && neighbors <= 1;
     }
 
     public void Moved()
