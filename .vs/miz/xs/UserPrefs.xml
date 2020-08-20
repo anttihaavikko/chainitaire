@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{B84E19BA-08C2-ADDC-72A0-0C2EEF2D37C8}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dude.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="87" Column="24" />
-      <File FileName="Assets/Scripts/Deck.cs" Line="67" Column="10" />
-      <File FileName="Assets/Scripts/Card.cs" Line="69" Column="1" />
-      <File FileName="Assets/Scripts/Board.cs" Line="47" Column="1" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="28" Column="29" />
+      <File FileName="Assets/Scripts/Deck.cs" Line="16" Column="24" />
+      <File FileName="Assets/Scripts/Card.cs" Line="53" Column="29" />
+      <File FileName="Assets/Scripts/Board.cs" Line="51" Column="1" />
       <File FileName="Assets/Scripts/NoiseScaler.cs" Line="40" Column="64" />
       <File FileName="Assets/Scripts/NumberScroller.cs" Line="29" Column="6" />
       <File FileName="Assets/Scripts/EffectManager.cs" Line="62" Column="41" />
       <File FileName="Assets/Scripts/ObjectPool.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="121" Column="1" />
+      <File FileName="Assets/Scripts/SpeechBubble.cs" Line="149" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

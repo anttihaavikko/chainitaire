@@ -13,13 +13,42 @@ public class Dude : MonoBehaviour
     public SortingGroup sortingGroup;
     public EffectCamera cam;
     public Appearer comboDisplay;
+    public SpeechBubble bubble;
 
     private float scale;
     private int combo = 1;
+    private float xmod, ymod;
 
     private void Start()
     {
         scale = transform.localScale.x;
+
+        this.StartCoroutine(() => ShowText("Hey! Could you build me a platform from the cards."), 0.3f);
+    }
+
+    public void MirrorBubble()
+    {
+        xmod = -xmod;
+        ymod = -ymod;
+        bubble.transform.position = transform.position + ymod * 1.9f * Vector3.up + xmod * 2.6f * Vector3.right;
+    }
+
+    private void ShowText(string message)
+    {
+        xmod = transform.position.x > 0 ? -1f : 1f;
+        ymod = transform.position.y > 0 ? -1f : 1f;
+        bubble.transform.position = transform.position + ymod * 1.9f * Vector3.up + xmod * 2.6f * Vector3.right;
+        bubble.ShowMessage(message);
+    }
+
+    public void HideBubble()
+    {
+        bubble.Hide();
+    }
+
+    public void ShowBubble()
+    {
+        bubble.Show();
     }
 
     public void TryMove()
@@ -85,6 +114,18 @@ public class Dude : MonoBehaviour
                 comboScore.Clear();
                 this.StartCoroutine(comboDisplay.Hide, 0.5f);
             }, 0.7f);
+
+            string[] suits = { "clubs", "diamonds", "hearts", "spades" };
+            string[] values = { "0", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+            string[] pres = { "", "an", "a", "a", "a", "a", "a", "a", "an", "a", "a", "a", "a", "a" };
+            var color = suit == 0 || suit == 3 ? Color.black : deck.red;
+            var s = TextUtils.TextWith(suits[suit], color);
+            var v = TextUtils.TextWith(values[value], color);
+            this.StartCoroutine(() => ShowText("I can only step on " + s + " or " + pres[value] + " " + v + " now."), 0.3f);
+        }
+        else
+        {
+            ShowBubble();
         }
 
         deck.AddCard();

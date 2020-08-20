@@ -50,6 +50,8 @@ public class Card : MonoBehaviour
         if (locked)
             return;
 
+        deck.dude.HideBubble();
+
         holding = true;
 
         Vector3 mp = Input.mousePosition;
@@ -78,6 +80,7 @@ public class Card : MonoBehaviour
         {
             Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
             holding = false;
+            deck.dude.ShowBubble();
             return;
         }
 

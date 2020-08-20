@@ -23,9 +23,7 @@ public class NumberScroller : MonoBehaviour
         var scrollSpeed = Mathf.Max(10f, Mathf.Abs(target - current));
         current = Mathf.MoveTowards(current, target, Time.deltaTime * scrollSpeed * 2f);
 
-        var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
-        nfi.NumberGroupSeparator = " ";
-        display.text = prefix + current.ToString("#,0", nfi);
+        display.text = prefix + current.ToString("#,0");
     }
 
     public void Add(float amount)

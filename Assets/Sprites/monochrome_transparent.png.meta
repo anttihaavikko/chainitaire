@@ -2929,13 +2929,13 @@ TextureImporter:
     second: monochrome_transparent_974
   - first:
       213: 7003020984470462886
-    second: w
+    second: bub-w
   - first:
       213: -2246306745025785646
     second: block1
   - first:
       213: 1075395858509367341
-    second: e
+    second: bub-e
   - first:
       213: 1445333881666051301
     second: monochrome_transparent_978
@@ -3076,7 +3076,7 @@ TextureImporter:
     second: bub-sw
   - first:
       213: -6414658869734491782
-    second: s
+    second: bub-s
   - first:
       213: -4858388981959730588
     second: bub-se
@@ -23040,10 +23040,10 @@ TextureImporter:
       name: bub-nw
       rect:
         serializedVersion: 2
-        x: 272
-        y: 34
-        width: 16
-        height: 16
+        x: 273
+        y: 35
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -23061,10 +23061,10 @@ TextureImporter:
       name: bub-n
       rect:
         serializedVersion: 2
-        x: 289
-        y: 34
-        width: 16
-        height: 16
+        x: 290
+        y: 35
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -23082,10 +23082,10 @@ TextureImporter:
       name: bub-ne
       rect:
         serializedVersion: 2
-        x: 306
-        y: 34
-        width: 16
-        height: 16
+        x: 307
+        y: 35
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -24045,13 +24045,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w
+      name: bub-w
       rect:
         serializedVersion: 2
-        x: 272
-        y: 17
-        width: 16
-        height: 16
+        x: 273
+        y: 18
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -24087,13 +24087,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: e
+      name: bub-e
       rect:
         serializedVersion: 2
-        x: 306
-        y: 17
-        width: 16
-        height: 16
+        x: 307
+        y: 18
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25056,10 +25056,10 @@ TextureImporter:
       name: bub-sw
       rect:
         serializedVersion: 2
-        x: 272
-        y: 0
-        width: 16
-        height: 16
+        x: 273
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25074,13 +25074,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s
+      name: bub-s
       rect:
         serializedVersion: 2
-        x: 289
-        y: 0
-        width: 16
-        height: 16
+        x: 290
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25098,10 +25098,10 @@ TextureImporter:
       name: bub-se
       rect:
         serializedVersion: 2
-        x: 306
-        y: 0
-        width: 16
-        height: 16
+        x: 307
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

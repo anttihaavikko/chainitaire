@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blobify
+  m_Shader: {fileID: 4800000, guid: d2f3570eda9df4adcb1657e6dc2176e8, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Amount: 0.05
+    - _Offset: 0
+    - _Peaks: 2
+    - _RotationSpeed: 30
+    - _Speed: 1
+    - _amplitude: 3.2
+    - _frequency: 1.56
+    - _gain: 0.126
+    - _lacunarity: 3.43
+    - _monochromatic: 0
+    - _octaves: 2
+    - _offsetX: 0
+    - _offsetY: 0
+    - _power: 2.29
+    - _range: 0.397
+    - _scale: 1
+    - _value: 0.58
+    m_Colors:
+    - _color: {r: 1, g: 1, b: 1, a: 1}
