@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
     public LayerMask markerLayer;
 
     private List<GameObject> cells, markers;
+    private bool firstMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,14 @@ public class Board : MonoBehaviour
             }
         }
 
-        dude.transform.position = cells.OrderBy(c => Random.value).First(c => c.tag == "Island").transform.position;
+        var start = cells.OrderBy(c => Random.value).First(c => c.tag == "Island");
+        start.tag = "Start";
+        dude.transform.position = start.transform.position;
+    }
+
+    public void Moved()
+    {
+        firstMove = false;
     }
 
     // Update is called once per frame
@@ -69,7 +77,8 @@ public class Board : MonoBehaviour
     private bool IsOk(GameObject g)
     {
         if (!g) return false;
-        return g.tag == "Island" || g.tag == "Card" || g.tag == "Wall";
+        if(firstMove) return g.tag == "Start";
+        return g.tag == "Island" || g.tag == "Card" || g.tag == "Wall" || g.tag == "Start";
     }
 
     private List<GameObject> GetNeighbors(Vector3 pos)

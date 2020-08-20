@@ -97,6 +97,8 @@ public class Dude : MonoBehaviour
                     Instantiate(blockPrefab, best.transform.position, Quaternion.identity);
                     Destroy(best.gameObject);
 
+                    deck.board.Moved();
+
                     combo++;
                 }, 0.3f);
 
@@ -116,7 +118,7 @@ public class Dude : MonoBehaviour
             }, 0.7f);
 
             string[] suits = { "clubs", "diamonds", "hearts", "spades" };
-            string[] values = { "0", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+            string[] values = { "0", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
             string[] pres = { "", "an", "a", "a", "a", "a", "a", "a", "an", "a", "a", "a", "a", "a" };
             var color = suit == 0 || suit == 3 ? Color.black : deck.red;
             var s = TextUtils.TextWith(suits[suit], color);
