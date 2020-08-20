@@ -129,6 +129,16 @@ public class Dude : MonoBehaviour
 
         deck.AddCard();
         combo = 1;
+
+        CheckForEnd();
+    }
+
+    void CheckForEnd()
+    {
+        var spots = GetTakenNeighbors().Where(s => s != null);
+
+        if(spots.Count() == 4)
+            Debug.Log("Game Over!");
     }
 
     void NextText()
@@ -200,5 +210,30 @@ public class Dude : MonoBehaviour
         }
 
         return null;
-    } 
+    }
+
+    private List<GameObject> GetTakenNeighbors()
+    {
+        var all = new List<GameObject>
+        {
+            GetTakenNeighbor(Vector3.up),
+            GetTakenNeighbor(Vector3.down),
+            GetTakenNeighbor(Vector3.right),
+            GetTakenNeighbor(Vector3.left)
+        };
+
+        return all;
+    }
+
+    private GameObject GetTakenNeighbor(Vector3 dir)
+    {
+        var hit = Physics2D.OverlapCircle(transform.position + dir, 0.1f);
+
+        if (hit)
+        {
+            return hit.gameObject;
+        }
+
+        return null;
+    }
 }
