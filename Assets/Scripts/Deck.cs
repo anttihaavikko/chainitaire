@@ -11,7 +11,7 @@ public class Deck : MonoBehaviour
     public Transform spawnPoint;
     public Sprite[] cardSprites;
     public Dude dude;
-    public Image currentIndicator;
+    public Image currentIndicator, indicatorSuit;
     public Color red;
     public Board board;
 
@@ -70,7 +70,9 @@ public class Deck : MonoBehaviour
 
     public void SetPreview(Card c)
     {
-        currentIndicator.sprite = cardSprites[c.GetSuit() * 13 + c.GetValue() - 1];
+        var s = c.GetSuit();
+        currentIndicator.sprite = cardSprites[s * 13 + c.GetValue() - 1];
+        indicatorSuit.color = s == 0 || s == 3 ? Color.black : red;
     }
 }
 
