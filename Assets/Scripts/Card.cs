@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 
 public class Card : MonoBehaviour
@@ -120,6 +121,9 @@ public class Card : MonoBehaviour
 
         if (deck.held == this)
             deck.UseHeld();
+
+        var trigger = GetComponent<EventTrigger>();
+        Destroy(trigger);
 
         PostDrop(p);
 
