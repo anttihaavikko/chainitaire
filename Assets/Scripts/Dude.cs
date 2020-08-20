@@ -18,6 +18,7 @@ public class Dude : MonoBehaviour
     private float scale;
     private int combo = 1;
     private float xmod, ymod;
+    private int move;
 
     private void Start()
     {
@@ -116,22 +117,40 @@ public class Dude : MonoBehaviour
                 comboScore.Clear();
                 this.StartCoroutine(comboDisplay.Hide, 0.5f);
             }, 0.7f);
+        }
 
-            string[] suits = { "clubs", "diamonds", "hearts", "spades" };
-            string[] values = { "0", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
-            string[] pres = { "", "an", "a", "a", "a", "a", "a", "a", "an", "a", "a", "a", "a", "a" };
-            var color = suit == 0 || suit == 3 ? Color.black : deck.red;
-            var s = TextUtils.TextWith(suits[suit], color);
-            var v = TextUtils.TextWith(values[value], color);
-            this.StartCoroutine(() => ShowText("I can only step on " + s + " or " + pres[value] + " " + v + " now."), 0.3f);
-        }
-        else
-        {
-            ShowBubble();
-        }
+        NextText();
 
         deck.AddCard();
         combo = 1;
+    }
+
+    void NextText()
+    {
+        //Debug.Log("Showing message for move " + move);
+        string[] suits = { "clubs", "diamonds", "hearts", "spades" };
+        string[] values = { "0", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+        string[] pres = { "", "an", "a", "a", "a", "a", "a", "a", "an", "a", "a", "a", "a", "a" };
+        var color = suit == 0 || suit == 3 ? Color.black : deck.red;
+        var s = TextUtils.TextWith(suits[suit], color);
+        var v = TextUtils.TextWith(values[value], color);
+
+        if (move == 0 || move == 1)
+            this.StartCoroutine(() => ShowText("I can only step on " + s + " or " + pres[value] + " " + v + " now!"), 0.3f);
+
+        if (move == 2)
+            this.StartCoroutine(() => ShowText("You can also see the matching card on (top left corner) of the screen!"), 0.3f);
+
+        if (move == 3)
+            this.StartCoroutine(() => ShowText("The (more moves) I do at one placement, the (more points) you get!"), 0.3f);
+
+        if (move == 4)
+            this.StartCoroutine(() => ShowText("You can place put cards (on hold) for saving them for later!"), 0.3f);
+
+        if (move == 5)
+            this.StartCoroutine(() => ShowText("Good luck!"), 0.3f);
+
+        move++;
     }
 
     private bool CanJumpTo(Card card)

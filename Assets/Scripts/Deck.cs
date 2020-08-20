@@ -14,6 +14,7 @@ public class Deck : MonoBehaviour
     public Image currentIndicator, indicatorSuit;
     public Color red;
     public Board board;
+    public Appearer moveHelp;
 
     private Stack<SuitAndValue> deck;
 
@@ -50,6 +51,8 @@ public class Deck : MonoBehaviour
 
     public void AddCard()
     {
+        if (!deck.Any()) return;
+
         var c = deck.Pop();
         var card = Instantiate(cardPrefab, transform);
         card.transform.localPosition = Vector3.zero;
@@ -73,6 +76,11 @@ public class Deck : MonoBehaviour
         var s = c.GetSuit();
         currentIndicator.sprite = cardSprites[s * 13 + c.GetValue() - 1];
         indicatorSuit.color = s == 0 || s == 3 ? Color.black : red;
+    }
+
+    public void HideHelp()
+    {
+        moveHelp.Hide();
     }
 }
 

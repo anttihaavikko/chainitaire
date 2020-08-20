@@ -84,6 +84,8 @@ public class Card : MonoBehaviour
             return;
         }
 
+        deck.HideHelp();
+
         deck.board.DeactivateMarker(hit.gameObject);
 
         this.StartCoroutine(deck.dude.TryMove, 0.1f);

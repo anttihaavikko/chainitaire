@@ -3082,7 +3082,7 @@ TextureImporter:
     second: bub-se
   - first:
       213: -934401485410946593
-    second: monochrome_transparent_1026
+    second: move
   - first:
       213: 3590997306283189958
     second: monochrome_transparent_1027
@@ -25116,7 +25116,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_1026
+      name: move
       rect:
         serializedVersion: 2
         x: 323

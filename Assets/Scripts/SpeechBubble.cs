@@ -202,6 +202,8 @@ public class SpeechBubble : MonoBehaviour {
 
 	public void Hide() {
 
+        SkipMessage();
+
         //done = true;
         //messagePos = -1;
 

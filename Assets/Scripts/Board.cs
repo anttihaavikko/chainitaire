@@ -48,7 +48,7 @@ public class Board : MonoBehaviour
         }
 
         var possibleStarts = cells.Where(CanBeStart);
-        var start = cells.OrderBy(c => Random.value).First(c => c.tag == "Island");
+        var start = possibleStarts.OrderBy(c => Random.value).First(c => c.tag == "Island");
         start.tag = "Start";
         dude.transform.position = start.transform.position;
     }
