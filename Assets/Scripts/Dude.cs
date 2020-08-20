@@ -14,6 +14,7 @@ public class Dude : MonoBehaviour
     public EffectCamera cam;
     public Appearer comboDisplay;
     public SpeechBubble bubble;
+    public Appearer holdArea;
 
     private float scale;
     private int combo = 1;
@@ -24,7 +25,7 @@ public class Dude : MonoBehaviour
     {
         scale = transform.localScale.x;
 
-        this.StartCoroutine(() => ShowText("Hey! Could you build me a platform from the cards."), 0.3f);
+        this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from the (cards)."), 0.3f);
     }
 
     public void MirrorBubble()
@@ -145,7 +146,10 @@ public class Dude : MonoBehaviour
             this.StartCoroutine(() => ShowText("The (more moves) I do at one placement, the (more points) you get!"), 0.3f);
 
         if (move == 4)
+        {
             this.StartCoroutine(() => ShowText("You can place put cards (on hold) for saving them for later!"), 0.3f);
+            holdArea.Show();
+        }
 
         if (move == 5)
             this.StartCoroutine(() => ShowText("Good luck!"), 0.3f);

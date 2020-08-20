@@ -9,14 +9,17 @@ public class Deck : MonoBehaviour
 {
     public Card cardPrefab;
     public Transform spawnPoint;
+    public Transform heldPoint;
     public Sprite[] cardSprites;
     public Dude dude;
     public Image currentIndicator, indicatorSuit;
     public Color red;
     public Board board;
     public Appearer moveHelp;
+    public Card held;
 
     private Stack<SuitAndValue> deck;
+    private bool usingHeld;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,12 @@ public class Deck : MonoBehaviour
         AddCard();
     }
 
+    public void UseHeld()
+    {
+        held = null;
+        usingHeld = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +61,12 @@ public class Deck : MonoBehaviour
     public void AddCard()
     {
         if (!deck.Any()) return;
+
+        if(usingHeld)
+        {
+            usingHeld = false;
+            return;
+        }
 
         var c = deck.Pop();
         var card = Instantiate(cardPrefab, transform);

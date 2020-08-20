@@ -76,13 +76,51 @@ public class Card : MonoBehaviour
 
         deck.board.HideMarkers();
 
+        if(hit && hit.gameObject.tag == "Hold")
+        {
+            if (deck.held)
+            {
+                if(deck.held == this)
+                {
+                    Tweener.Instance.MoveTo(transform, hit.transform.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                }
+                else
+                {
+                    Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                }
+
+                holding = false;
+                deck.dude.ShowBubble();
+                return;
+            }
+
+            Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+            deck.held = this;
+            PostDrop(hit.transform.position);
+            deck.AddCard();
+            return;
+        }
+
         if (!hit)
         {
-            Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+            if (deck.held == this)
+            {
+                Tweener.Instance.MoveTo(transform, deck.heldPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+            }
+            else
+            {
+                Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+            }
+
             holding = false;
             deck.dude.ShowBubble();
             return;
         }
+
+        if (deck.held == this)
+            deck.UseHeld();
+
+        PostDrop(p);
 
         deck.HideHelp();
 
@@ -90,12 +128,16 @@ public class Card : MonoBehaviour
 
         this.StartCoroutine(deck.dude.TryMove, 0.1f);
 
-        Tweener.Instance.MoveTo(transform, p, 0.1f, 0, TweenEasings.BounceEaseOut);
-        holding = false;
-        locked = true;
-
         deck.dude.sortingGroup.sortingOrder = 5;
         sortingGroup.sortingOrder = -2;
+
+        locked = true;
+    }
+
+    void PostDrop(Vector3 p)
+    {
+        Tweener.Instance.MoveTo(transform, p, 0.1f, 0, TweenEasings.BounceEaseOut);
+        holding = false;
     }
 
     public void SetSuitAndValue(int s, int v, Sprite spr)

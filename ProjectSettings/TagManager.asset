@@ -8,6 +8,7 @@ TagManager:
   - Card
   - Wall
   - Start
+  - Hold
   layers:
   - Default
   - TransparentFX
