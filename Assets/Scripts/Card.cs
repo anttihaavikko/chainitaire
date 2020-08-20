@@ -113,7 +113,8 @@ public class Card : MonoBehaviour
             }
 
             holding = false;
-            deck.dude.ShowBubble();
+            if(deck.dude.HasMessage())
+                deck.dude.ShowBubble();
             return;
         }
 

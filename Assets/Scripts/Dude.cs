@@ -43,6 +43,11 @@ public class Dude : MonoBehaviour
         bubble.ShowMessage(message);
     }
 
+    public bool HasMessage()
+    {
+        return move <= 5;
+    }
+
     public void HideBubble()
     {
         bubble.Hide();
@@ -147,7 +152,7 @@ public class Dude : MonoBehaviour
 
         if (move == 4)
         {
-            this.StartCoroutine(() => ShowText("You can place put cards (on hold) for saving them for later!"), 0.3f);
+            this.StartCoroutine(() => ShowText("You can place cards (on hold) if you wish to save them for later!"), 0.3f);
             holdArea.Show();
         }
 
