@@ -21,6 +21,8 @@ public class Dude : MonoBehaviour
     private int combo = 1;
     private float xmod, ymod;
     private int move;
+    private int score;
+    private bool ended;
 
     private void Start()
     {
@@ -92,7 +94,9 @@ public class Dude : MonoBehaviour
 
                     var amt = best.GetValue();
                     var bonus = best.HasBonus();
-                    comboScore.Add(amt * combo * (bonus ? 10 : 1));
+                    var addition = amt * combo * (bonus ? 10 : 1);
+                    score += addition;
+                    comboScore.Add(addition);
 
                     this.StartCoroutine(() => {
                         var text = amt + "<size=3> x " + (combo - 1) + "</size>";
@@ -181,7 +185,12 @@ public class Dude : MonoBehaviour
                 gameOverTexts[3].Show();
             }, 2.75f);
 
-            rankDisplay.ShowWithText("Ranked #6", 2f);
+            ScoreManager.Instance.SubmitScore("ANTTIH", score, move);
+            ScoreManager.Instance.FindPlayerRank();
+
+            rankDisplay.ShowWithText(ScoreManager.Instance.GetRank(), 2f);
+
+            ended = true;
         }
     }
 
@@ -279,5 +288,13 @@ public class Dude : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void Update()
+    {
+        if(ended)
+        {
+            rankDisplay.text.text = ScoreManager.Instance.GetRank();
+        }
     }
 }
