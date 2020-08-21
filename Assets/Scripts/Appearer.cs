@@ -8,6 +8,7 @@ public class Appearer : MonoBehaviour
 	public float appearAfter = -1f;
 	public float hideDelay;
     public bool silent;
+    public bool hiddenOnWeb;
 
     public TMP_Text text;
     private Vector3 size;
@@ -18,7 +19,7 @@ public class Appearer : MonoBehaviour
         size = transform.localScale;
         transform.localScale = Vector3.zero;
 
-		if (appearAfter >= 0)
+		if (appearAfter >= 0 && (!hiddenOnWeb || Application.platform != RuntimePlatform.WebGLPlayer))
 			Invoke("Show", appearAfter);
     }
 
