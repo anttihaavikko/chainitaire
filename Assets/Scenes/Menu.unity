@@ -5873,7 +5873,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 926856895}
   hoverColor: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
-  changeToScene: Main
+  changeToScene: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 752140802}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &926856894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7775,7 +7789,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1246427458}
   hoverColor: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
-  changeToScene: Main
+  changeToScene: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 752140802}
+        m_MethodName: LoadMore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1246427457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9947,6 +9975,9 @@ MonoBehaviour:
   button: {fileID: 1616227655}
   hoverColor: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
   changeToScene: Main
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1616227654
 BoxCollider2D:
   m_ObjectHideFlags: 0

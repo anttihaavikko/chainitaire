@@ -185,7 +185,7 @@ public class Dude : MonoBehaviour
                 gameOverTexts[3].Show();
             }, 2.75f);
 
-            ScoreManager.Instance.SubmitScore("ANTTIH", score, move);
+            ScoreManager.Instance.SubmitScore("DEV", score, move);
             ScoreManager.Instance.FindPlayerRank();
 
             rankDisplay.ShowWithText(ScoreManager.Instance.GetRank(), 2f);

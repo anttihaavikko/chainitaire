@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ public class TextButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public TMPro.TMP_Text button;
     public Color hoverColor;
     public string changeToScene;
+    public UnityEvent onClick;
 
     private Color color;
 
@@ -19,7 +21,10 @@ public class TextButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneChanger.Instance.ChangeScene(changeToScene);
+        onClick?.Invoke();
+
+        if(!string.IsNullOrEmpty(changeToScene))
+            SceneChanger.Instance.ChangeScene(changeToScene);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
