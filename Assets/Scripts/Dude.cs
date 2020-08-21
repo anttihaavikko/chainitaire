@@ -12,7 +12,7 @@ public class Dude : MonoBehaviour
     public NumberScroller totalScore, comboScore;
     public SortingGroup sortingGroup;
     public EffectCamera cam;
-    public Appearer comboDisplay;
+    public Appearer comboDisplay, rankDisplay;
     public SpeechBubble bubble;
     public Appearer holdArea;
     public Appearer[] gameOverTexts;
@@ -26,7 +26,7 @@ public class Dude : MonoBehaviour
     {
         scale = transform.localScale.x;
 
-        this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from the (cards)."), 0.3f);
+        this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from the (cards)."), 1.5f);
     }
 
     public void MirrorBubble()
@@ -175,6 +175,13 @@ public class Dude : MonoBehaviour
                 cam.BaseEffect(0.1f);
                 gameOverTexts[2].Show();
             }, 2.5f);
+
+            this.StartCoroutine(() => {
+                cam.BaseEffect(0.1f);
+                gameOverTexts[3].Show();
+            }, 2.75f);
+
+            rankDisplay.ShowWithText("Ranked #6", 2f);
         }
     }
 

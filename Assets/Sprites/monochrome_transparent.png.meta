@@ -2794,7 +2794,7 @@ TextureImporter:
     second: bub-ne
   - first:
       213: 9075762219741384074
-    second: monochrome_transparent_930
+    second: ace
   - first:
       213: 2251228257789404847
     second: s1
@@ -23100,7 +23100,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_930
+      name: ace
       rect:
         serializedVersion: 2
         x: 323

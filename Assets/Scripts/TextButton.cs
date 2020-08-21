@@ -8,6 +8,7 @@ public class TextButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 {
     public TMPro.TMP_Text button;
     public Color hoverColor;
+    public string changeToScene;
 
     private Color color;
 
@@ -18,7 +19,7 @@ public class TextButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadSceneAsync("Main");
+        SceneChanger.Instance.ChangeScene(changeToScene);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
