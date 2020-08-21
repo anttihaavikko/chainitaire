@@ -59,13 +59,15 @@ public class Board : MonoBehaviour
 
     public void DoBonus(bool silent = false)
     {
-        if(!silent)
-        {
-             // TODO: do spawn sound here
-        }
-
         var spot = markers.OrderBy(m => Random.value).First();
         bonus.transform.position = spot.transform.position;
+
+        if (!silent)
+        {
+            // TODO: do spawn sound here
+
+            EffectManager.Instance.AddEffect(4, bonus.transform.position);
+        }
 
         bonus.SetSprite(bonusSprites[Random.Range(0, bonusSprites.Length)]);
     }

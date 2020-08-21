@@ -11501,6 +11501,7 @@ MonoBehaviour:
   - {fileID: 3828929114141111945, guid: c0db14f9e1ae14542a4d86105ade8a85, type: 3}
   - {fileID: 5591163146444721918, guid: a091df0782cb642bbbaa193f3ee44951, type: 3}
   - {fileID: 5441902366405842185, guid: 18f6eeb3eddf54fafb3f408b8e21ff90, type: 3}
+  - {fileID: 8328662193041244425, guid: b1ac603b13bd249a59915526d25bb639, type: 3}
   numberPrefab: {fileID: 1234916841009900116, guid: 4d3dc026c9f4b4c66bbe4861a95bf6dd,
     type: 3}
   textPool: {fileID: 1434002771}
@@ -16433,8 +16434,6 @@ MonoBehaviour:
   - {fileID: 2778183734726076818, guid: 4e8cbaa07f5384cd1b90a3ea7927c178, type: 3}
   - {fileID: 9180564555056204931, guid: 4e8cbaa07f5384cd1b90a3ea7927c178, type: 3}
   - {fileID: -8932214944260385160, guid: 4e8cbaa07f5384cd1b90a3ea7927c178, type: 3}
-  - {fileID: 1410736467646324921, guid: 4e8cbaa07f5384cd1b90a3ea7927c178, type: 3}
-  - {fileID: -4230226788405872797, guid: 4e8cbaa07f5384cd1b90a3ea7927c178, type: 3}
   bonus: {fileID: 312713302}
 --- !u!1 &2125346621
 GameObject:
