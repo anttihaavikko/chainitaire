@@ -90,15 +90,25 @@ public class Dude : MonoBehaviour
                     comboDisplay.Show();
 
                     var amt = best.GetValue();
-                    comboScore.Add(amt * combo);
+                    var bonus = best.HasBonus();
+                    comboScore.Add(amt * combo * (bonus ? 10 : 1));
 
                     this.StartCoroutine(() => {
-                        EffectManager.Instance.AddText(amt + "<size=3>x" + (combo - 1) + "</size>", transform.position + Vector3.up * 0.2f);
+                        var text = amt + "<size=3> x " + (combo - 1) + "</size>";
+                        if (bonus) text += "<size=3> x 10</size>";
+                        EffectManager.Instance.AddText(text, transform.position + Vector3.up * 0.2f);
                     }, 0.25f);
 
                     this.StartCoroutine(() => {
                         cam.BaseEffect(0.1f);
                         EffectManager.Instance.AddEffect(1, transform.position + Vector3.down * 0.5f);
+
+                        if (bonus)
+                        {
+                            EffectManager.Instance.AddEffect(3, transform.position);
+                            deck.board.DoBonus();
+                        }
+
                     }, 0.25f);
 
                     Instantiate(blockPrefab, best.transform.position, Quaternion.identity);
@@ -212,7 +222,7 @@ public class Dude : MonoBehaviour
 
     private Card GetNeighbor(Vector3 dir)
     {
-        var hit = Physics2D.OverlapCircle(transform.position + dir, 0.1f);
+        var hit = Physics2D.OverlapCircle(transform.position + dir, 0.1f, deck.board.cardLayer);
 
         if(hit)
         {

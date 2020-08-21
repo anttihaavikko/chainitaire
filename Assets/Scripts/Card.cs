@@ -16,6 +16,7 @@ public class Card : MonoBehaviour
     private Camera cam;
     private Vector3 offset;
     private int suit, value;
+    private Bonus bonus;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,12 @@ public class Card : MonoBehaviour
         deck.board.ShowMarkers();
     }
 
+    private void MoveTo(Vector3 pos)
+    {
+        Tweener.Instance.MoveTo(transform, pos, 0.2f, 0, TweenEasings.BounceEaseOut);
+        this.StartCoroutine(() => EffectManager.Instance.AddEffect(2, pos), 0.05f);
+    }
+
     public void Drop()
     {
         if (locked)
@@ -83,11 +90,11 @@ public class Card : MonoBehaviour
             {
                 if(deck.held == this)
                 {
-                    Tweener.Instance.MoveTo(transform, hit.transform.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                    MoveTo(hit.transform.position);
                 }
                 else
                 {
-                    Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                    MoveTo(deck.spawnPoint.position);
                 }
 
                 holding = false;
@@ -95,7 +102,7 @@ public class Card : MonoBehaviour
                 return;
             }
 
-            Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+            MoveTo(deck.spawnPoint.position);
             deck.held = this;
             PostDrop(hit.transform.position);
             deck.AddCard();
@@ -106,11 +113,11 @@ public class Card : MonoBehaviour
         {
             if (deck.held == this)
             {
-                Tweener.Instance.MoveTo(transform, deck.heldPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                MoveTo(deck.heldPoint.position);
             }
             else
             {
-                Tweener.Instance.MoveTo(transform, deck.spawnPoint.position, 0.2f, 0, TweenEasings.BounceEaseOut);
+                MoveTo(deck.spawnPoint.position);
             }
 
             holding = false;
@@ -121,6 +128,8 @@ public class Card : MonoBehaviour
 
         if (deck.held == this)
             deck.UseHeld();
+
+        bonus = Physics2D.OverlapCircle(p, 0.1f, deck.board.bonusLayer)?.GetComponent<Bonus>();
 
         var trigger = GetComponent<EventTrigger>();
         Destroy(trigger);
@@ -141,7 +150,7 @@ public class Card : MonoBehaviour
 
     void PostDrop(Vector3 p)
     {
-        Tweener.Instance.MoveTo(transform, p, 0.1f, 0, TweenEasings.BounceEaseOut);
+        MoveTo(p);
         holding = false;
     }
 
@@ -157,5 +166,10 @@ public class Card : MonoBehaviour
     public int GetValue()
     {
         return value + 1;
+    }
+
+    public bool HasBonus()
+    {
+        return bonus != null;
     }
 }

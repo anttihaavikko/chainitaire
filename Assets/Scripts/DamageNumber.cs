@@ -7,12 +7,6 @@ public class DamageNumber : MonoBehaviour
 {
     public List<TMPro.TMP_Text> nums;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        QueueRemove();
-    }
-
     public void QueueRemove()
     {
         Invoke("Remove", 3f);
@@ -27,6 +21,7 @@ public class DamageNumber : MonoBehaviour
     // Update is called once per frame
     void Remove()
     {
+        Debug.Log("Returning " + name + " to pool...");
         EffectManager.Instance.ReturnTextToPool(this);
     }
 }

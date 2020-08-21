@@ -7,7 +7,9 @@ public class Board : MonoBehaviour
 {
     public GameObject blockPrefab, markerPrefab;
     public Dude dude;
-    public LayerMask markerLayer;
+    public LayerMask markerLayer, bonusLayer, cardLayer;
+    public Sprite[] bonusSprites;
+    public Bonus bonus;
 
     private List<GameObject> cells, markers;
     private bool firstMove = true;
@@ -51,6 +53,21 @@ public class Board : MonoBehaviour
         var start = possibleStarts.OrderBy(c => Random.value).First(c => c.tag == "Island");
         start.tag = "Start";
         dude.transform.position = start.transform.position;
+
+        DoBonus(true);
+    }
+
+    public void DoBonus(bool silent = false)
+    {
+        if(!silent)
+        {
+             // TODO: do spawn sound here
+        }
+
+        var spot = markers.OrderBy(m => Random.value).First();
+        bonus.transform.position = spot.transform.position;
+
+        bonus.SetSprite(bonusSprites[Random.Range(0, bonusSprites.Length)]);
     }
 
     private bool CanBeStart(GameObject g)

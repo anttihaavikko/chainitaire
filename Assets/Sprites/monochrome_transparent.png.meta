@@ -646,7 +646,7 @@ TextureImporter:
     second: monochrome_transparent_213
   - first:
       213: -8932214944260385160
-    second: monochrome_transparent_214
+    second: get7
   - first:
       213: -7007608773206900903
     second: monochrome_transparent_215
@@ -763,7 +763,7 @@ TextureImporter:
     second: monochrome_transparent_252
   - first:
       213: 8927762133969041236
-    second: monochrome_transparent_253
+    second: shadow
   - first:
       213: -2498157891939216113
     second: monochrome_transparent_254
@@ -943,7 +943,7 @@ TextureImporter:
     second: monochrome_transparent_312
   - first:
       213: -8728982617419426848
-    second: monochrome_transparent_313
+    second: ghost
   - first:
       213: -5697431574750599984
     second: monochrome_transparent_314
@@ -1537,10 +1537,10 @@ TextureImporter:
     second: monochrome_transparent_510
   - first:
       213: 1410736467646324921
-    second: monochrome_transparent_511
+    second: get8
   - first:
       213: -4230226788405872797
-    second: monochrome_transparent_512
+    second: get9
   - first:
       213: -525994094359853803
     second: monochrome_transparent_513
@@ -1981,13 +1981,13 @@ TextureImporter:
     second: monochrome_transparent_658
   - first:
       213: 7263415619818168344
-    second: monochrome_transparent_659
+    second: exclamation
   - first:
       213: 8887008783893629975
     second: monochrome_transparent_660
   - first:
       213: 6998177495217448589
-    second: monochrome_transparent_661
+    second: question
   - first:
       213: -1698399526743140225
     second: monochrome_transparent_662
@@ -2122,16 +2122,16 @@ TextureImporter:
     second: monochrome_transparent_705
   - first:
       213: -156495118195790734
-    second: monochrome_transparent_706
+    second: face1
   - first:
       213: 8869501184389538906
-    second: monochrome_transparent_707
+    second: face2
   - first:
       213: -8790549450493783411
-    second: monochrome_transparent_708
+    second: face3
   - first:
       213: 4489476659541098100
-    second: monochrome_transparent_709
+    second: face4
   - first:
       213: -970674678683786395
     second: monochrome_transparent_710
@@ -2404,10 +2404,10 @@ TextureImporter:
     second: h13
   - first:
       213: 9180564555056204931
-    second: monochrome_transparent_800
+    second: get6
   - first:
       213: -1799001024256125302
-    second: monochrome_transparent_801
+    second: get1
   - first:
       213: -4290575776536614845
     second: monochrome_transparent_802
@@ -2692,10 +2692,10 @@ TextureImporter:
     second: c13
   - first:
       213: -2508155239264619802
-    second: monochrome_transparent_896
+    second: get2
   - first:
       213: -4011854630590703745
-    second: monochrome_transparent_897
+    second: get3
   - first:
       213: -3208944529562537016
     second: monochrome_transparent_898
@@ -2839,7 +2839,7 @@ TextureImporter:
     second: monochrome_transparent_944
   - first:
       213: 4953044020920068813
-    second: monochrome_transparent_945
+    second: get4
   - first:
       213: 3141434374926961778
     second: monochrome_transparent_946
@@ -2983,7 +2983,7 @@ TextureImporter:
     second: monochrome_transparent_992
   - first:
       213: 2778183734726076818
-    second: monochrome_transparent_993
+    second: get5
   - first:
       213: 5203505420124694422
     second: monochrome_transparent_994
@@ -8064,7 +8064,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_214
+      name: get7
       rect:
         serializedVersion: 2
         x: 391
@@ -8883,7 +8883,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_253
+      name: shadow
       rect:
         serializedVersion: 2
         x: 238
@@ -10143,7 +10143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_313
+      name: ghost
       rect:
         serializedVersion: 2
         x: 442
@@ -14301,7 +14301,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_511
+      name: get8
       rect:
         serializedVersion: 2
         x: 544
@@ -14322,7 +14322,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_512
+      name: get9
       rect:
         serializedVersion: 2
         x: 561
@@ -17409,7 +17409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_659
+      name: exclamation
       rect:
         serializedVersion: 2
         x: 612
@@ -17451,7 +17451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_661
+      name: question
       rect:
         serializedVersion: 2
         x: 646
@@ -18396,7 +18396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_706
+      name: face1
       rect:
         serializedVersion: 2
         x: 595
@@ -18417,7 +18417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_707
+      name: face2
       rect:
         serializedVersion: 2
         x: 612
@@ -18438,7 +18438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_708
+      name: face3
       rect:
         serializedVersion: 2
         x: 629
@@ -18459,7 +18459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_709
+      name: face4
       rect:
         serializedVersion: 2
         x: 646
@@ -20370,7 +20370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_800
+      name: get6
       rect:
         serializedVersion: 2
         x: 561
@@ -20391,7 +20391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_801
+      name: get1
       rect:
         serializedVersion: 2
         x: 578
@@ -22386,11 +22386,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_896
+      name: get2
       rect:
         serializedVersion: 2
         x: 561
-        y: 51
+        y: 52
         width: 16
         height: 16
       alignment: 0
@@ -22407,7 +22407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_897
+      name: get3
       rect:
         serializedVersion: 2
         x: 578
@@ -23415,7 +23415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_945
+      name: get4
       rect:
         serializedVersion: 2
         x: 578
@@ -24423,7 +24423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monochrome_transparent_993
+      name: get5
       rect:
         serializedVersion: 2
         x: 578

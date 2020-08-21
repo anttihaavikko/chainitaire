@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Start
   - Hold
+  - Bonus
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - 
   - Markers
-  - 
-  - 
+  - Bonus
+  - Cards
   - 
   - 
   - 
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Held
     uniqueID: 3703613775
+    locked: 0
+  - name: Front
+    uniqueID: 3302302343
     locked: 0
