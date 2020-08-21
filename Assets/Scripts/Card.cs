@@ -68,6 +68,22 @@ public class Card : MonoBehaviour
         deck.board.ShowMarkers();
     }
 
+    public void Enter()
+    {
+        if(bonus)
+        {
+            bonus.Enter();
+        }
+    }
+
+    public void Exit()
+    {
+        if (bonus)
+        {
+            bonus.Exit();
+        }
+    }
+
     private void MoveTo(Vector3 pos)
     {
         Tweener.Instance.MoveTo(transform, pos, 0.2f, 0, TweenEasings.BounceEaseOut);
@@ -131,8 +147,11 @@ public class Card : MonoBehaviour
 
         bonus = Physics2D.OverlapCircle(p, 0.1f, deck.board.bonusLayer)?.GetComponent<Bonus>();
 
-        var trigger = GetComponent<EventTrigger>();
-        Destroy(trigger);
+        if(!bonus)
+        {
+            var trigger = GetComponent<EventTrigger>();
+            Destroy(trigger);
+        }
 
         PostDrop(p);
 

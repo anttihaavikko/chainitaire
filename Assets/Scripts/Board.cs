@@ -7,7 +7,7 @@ public class Board : MonoBehaviour
 {
     public GameObject blockPrefab, markerPrefab;
     public Dude dude;
-    public LayerMask markerLayer, bonusLayer, cardLayer;
+    public LayerMask markerLayer, bonusLayer, cardLayer, objectLayer;
     public Sprite[] bonusSprites;
     public Bonus bonus;
 
@@ -124,7 +124,7 @@ public class Board : MonoBehaviour
 
     private GameObject GetNeighbor(Vector3 pos)
     {
-        var hit = Physics2D.OverlapCircle(pos, 0.1f);
+        var hit = Physics2D.OverlapCircle(pos, 0.1f, objectLayer);
 
         if (hit)
         {

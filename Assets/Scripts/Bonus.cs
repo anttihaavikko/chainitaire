@@ -19,7 +19,7 @@ public class Bonus : MonoBehaviour
     public void Enter()
     {
         pos = transform.position;
-        Tweener.Instance.MoveTo(wrapper, pos + Vector3.right * 0.5f, 0.2f, 0, TweenEasings.BounceEaseOut);
+        Tweener.Instance.MoveTo(wrapper, pos + Vector3.right * 0.25f, 0.2f, 0, TweenEasings.BounceEaseOut);
     }
 
     public void Exit()

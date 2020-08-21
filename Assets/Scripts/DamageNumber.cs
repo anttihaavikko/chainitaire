@@ -21,7 +21,6 @@ public class DamageNumber : MonoBehaviour
     // Update is called once per frame
     void Remove()
     {
-        Debug.Log("Returning " + name + " to pool...");
         EffectManager.Instance.ReturnTextToPool(this);
     }
 }

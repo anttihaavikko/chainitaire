@@ -15,6 +15,7 @@ public class Dude : MonoBehaviour
     public Appearer comboDisplay;
     public SpeechBubble bubble;
     public Appearer holdArea;
+    public Appearer[] gameOverTexts;
 
     private float scale;
     private int combo = 1;
@@ -100,7 +101,7 @@ public class Dude : MonoBehaviour
                     }, 0.25f);
 
                     this.StartCoroutine(() => {
-                        cam.BaseEffect(0.1f);
+                        cam.BaseEffect(bonus ? 0.25f : 0.1f);
                         EffectManager.Instance.AddEffect(1, transform.position + Vector3.down * 0.5f);
 
                         if (bonus)
@@ -153,11 +154,27 @@ public class Dude : MonoBehaviour
     {
         var spots = GetTakenNeighbors().Where(s => s != null);
 
+        //Debug.Log(spots.Count() + " spots taken.");
+
         if(spots.Count() == 4)
         {
             anim.SetTrigger("die");
             Invoke("Die", 0.4f);
-            Debug.Log("Game Over!");
+
+            this.StartCoroutine(() => {
+                cam.BaseEffect(0.1f);
+                gameOverTexts[0].Show();
+            }, 1.75f);
+
+            this.StartCoroutine(() => {
+                cam.BaseEffect(0.2f);
+                gameOverTexts[1].Show();
+            }, 1.5f);
+
+            this.StartCoroutine(() => {
+                cam.BaseEffect(0.1f);
+                gameOverTexts[2].Show();
+            }, 2.5f);
         }
     }
 
@@ -247,7 +264,7 @@ public class Dude : MonoBehaviour
 
     private GameObject GetTakenNeighbor(Vector3 dir)
     {
-        var hit = Physics2D.OverlapCircle(transform.position + dir, 0.1f);
+        var hit = Physics2D.OverlapCircle(transform.position + dir, 0.1f, deck.board.objectLayer);
 
         if (hit)
         {

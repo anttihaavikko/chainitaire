@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4345164983049744159}
   - component: {fileID: 4345164983049744158}
   - component: {fileID: 4345164983049744224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Block
   m_TagString: Island
   m_Icon: {fileID: 0}
