@@ -211,7 +211,7 @@ public class Dude : MonoBehaviour
             this.StartCoroutine(() => ShowText("You can also see the matching card on (top left corner) of the screen!"), 0.3f);
 
         if (move == 3)
-            this.StartCoroutine(() => ShowText("The (more moves) I do at one placement, the (more points) you get!"), 0.3f);
+            this.StartCoroutine(() => ShowText("The (more moves) I do with one placement, the (more points) you get!"), 0.3f);
 
         if (move == 4)
         {

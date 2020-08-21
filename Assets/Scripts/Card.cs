@@ -114,7 +114,10 @@ public class Card : MonoBehaviour
                 }
 
                 holding = false;
-                deck.dude.ShowBubble();
+
+                if(deck.dude.HasMessage())
+                    deck.dude.ShowBubble();
+
                 return;
             }
 
@@ -137,8 +140,10 @@ public class Card : MonoBehaviour
             }
 
             holding = false;
+
             if(deck.dude.HasMessage())
                 deck.dude.ShowBubble();
+
             return;
         }
 
