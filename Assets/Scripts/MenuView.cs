@@ -5,13 +5,15 @@ using UnityEngine;
 public class MenuView : MonoBehaviour
 {
     public TMPro.TMP_Text names, scores;
+    public Appearer moreButton;
 
-    private int page;
+    private int page = -1;
+    private bool moreHidden;
 
     // Start is called before the first frame update
     void Start()
     {
-        ScoreManager.Instance.LoadLeaderBoards(0);
+        LoadMore();
     }
 
     public void LoadMore()
@@ -24,6 +26,12 @@ public class MenuView : MonoBehaviour
     {
         names.text = ScoreManager.Instance.leaderBoardPositionsString;
         scores.text = ScoreManager.Instance.leaderBoardScoresString;
+
+        if(!moreHidden && ScoreManager.Instance.endReached)
+        {
+            moreButton.Hide();
+            moreHidden = true;
+        }
     }
 
     public void Quit()

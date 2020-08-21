@@ -31,12 +31,15 @@ public class Appearer : MonoBehaviour
             // AudioManager.Instance.PlayEffectAt(17, Vector3.zero, 0.329f);
         }
 
+        // Debug.Log("Showing " + name);
 		Tweener.Instance.ScaleTo(transform, size, 0.3f, 0f, TweenEasings.BounceEaseOut);
     }
 
     public void Hide()
 	{
         CancelInvoke("Show");
+
+        // Debug.Log("Hiding " + name);
 
         if(!silent)
         {

@@ -28,6 +28,7 @@ public class LeaderBoardScore {
 public class ScoreManager : MonoBehaviour {
 
     public string gameName;
+    public int perPage = 10;
     public Action onUploaded;
 
     private string playerName = "";
@@ -90,7 +91,7 @@ public class ScoreManager : MonoBehaviour {
 
 		FlagManager.Instance.HideAllFlags ();
 
-        var www = UnityWebRequest.Get("https://games.sahaqiel.com/leaderboards/load-scores.php?p=" + p + "&game=" + gameName);
+        var www = UnityWebRequest.Get("https://games.sahaqiel.com/leaderboards/load-scores.php?amt=" + perPage + "&p=" + p + "&game=" + gameName);
         www.certificateHandler = certHandler;
 
         yield return www.SendWebRequest();
@@ -116,7 +117,7 @@ public class ScoreManager : MonoBehaviour {
                 FindPlayerRank();
             }
 
-			endReached = (lb.scores.Length < 9);
+			endReached = lb.scores.Length < perPage - 1;
 
 		} else {
 			leaderBoardString = www.error;
