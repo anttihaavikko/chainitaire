@@ -225,9 +225,11 @@ public class ScoreManager : MonoBehaviour {
         onUploaded?.Invoke();
 
         uploading = false;
-		//HudManager.Instance.namePromptLabel.text = "SCORE UPLOADED!";
-		//HudManager.Instance.namePromptText.text = "PLAY AGAIN?";
-		//AudioManager.Instance.PlayEffectAt (AudioManager.BLING, Vector3.zero, 1f);
+        //HudManager.Instance.namePromptLabel.text = "SCORE UPLOADED!";
+        //HudManager.Instance.namePromptText.text = "PLAY AGAIN?";
+        //AudioManager.Instance.PlayEffectAt (AudioManager.BLING, Vector3.zero, 1f);
+
+        FindPlayerRank();
 	}
 
 	private void LoadPrefs() {

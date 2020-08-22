@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -481,10 +481,10 @@ RectTransform:
   m_Father: {fileID: 1699492051}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -108}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 443.48352, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34422640
 MonoBehaviour:
@@ -621,6 +621,9 @@ MonoBehaviour:
   button: {fileID: 34422640}
   hoverColor: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
   changeToScene: Main
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &34422643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -662,6 +665,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 0
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!1 &51310283
 GameObject:
@@ -932,6 +936,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 1
+  hiddenOnWeb: 0
   text: {fileID: 65266766}
 --- !u!1 &67192791
 GameObject:
@@ -1752,6 +1757,7 @@ MonoBehaviour:
   appearAfter: 3
   hideDelay: 0
   silent: 1
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!1 &193631810
 GameObject:
@@ -2313,10 +2319,10 @@ RectTransform:
   m_Father: {fileID: 1699492051}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -166.6}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 376.96802, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294204776
 MonoBehaviour:
@@ -2333,6 +2339,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 0
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!114 &294204777
 MonoBehaviour:
@@ -2349,6 +2356,9 @@ MonoBehaviour:
   button: {fileID: 294204779}
   hoverColor: {r: 0.9843137, g: 0.3882353, b: 0.4627451, a: 1}
   changeToScene: Menu
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &294204778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4335,6 +4345,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 0
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!4 &450723664
 Transform:
@@ -4816,6 +4827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameName: miz
+  perPage: 10
   leaderBoardString: 
   localScoreString: 
   leaderBoardPositionsString: 
@@ -6465,6 +6477,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 0
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!1 &588738072
 GameObject:
@@ -11448,6 +11461,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 0
+  hiddenOnWeb: 0
   text: {fileID: 0}
 --- !u!1 &1337577013
 GameObject:
@@ -12769,6 +12783,10 @@ MonoBehaviour:
   - {fileID: 1256790223}
   - {fileID: 454686981}
   - {fileID: 463548513}
+  mirrored: 1
+  xAmount: 1
+  yAmount: 1
+  scaleAmount: 1
 --- !u!1 &1484327712
 GameObject:
   m_ObjectHideFlags: 0
@@ -17384,6 +17402,7 @@ MonoBehaviour:
   appearAfter: -1
   hideDelay: 0
   silent: 1
+  hiddenOnWeb: 0
   text: {fileID: 2125158490}
 --- !u!114 &2125158490
 MonoBehaviour:

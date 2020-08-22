@@ -53,7 +53,7 @@ public class Deck : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadSceneAsync("Main");
+                SceneChanger.Instance.ChangeScene("Main");
             }
         }
     }

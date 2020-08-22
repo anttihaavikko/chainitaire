@@ -28,7 +28,7 @@ public class Dude : MonoBehaviour
     {
         scale = transform.localScale.x;
 
-        this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from the (cards)."), 1.5f);
+        this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from those (cards)."), 1.5f);
     }
 
     public void MirrorBubble()
@@ -185,8 +185,7 @@ public class Dude : MonoBehaviour
                 gameOverTexts[3].Show();
             }, 2.75f);
 
-            ScoreManager.Instance.SubmitScore("QQQ", score, move);
-            ScoreManager.Instance.FindPlayerRank();
+            ScoreManager.Instance.SubmitScore(PlayerPrefs.GetString("PlayerName"), score, move);
 
             rankDisplay.ShowWithText(ScoreManager.Instance.GetRank(), 2f);
 
@@ -211,7 +210,7 @@ public class Dude : MonoBehaviour
             this.StartCoroutine(() => ShowText("You can also see the matching card on (top left corner) of the screen!"), 0.3f);
 
         if (move == 3)
-            this.StartCoroutine(() => ShowText("The (more moves) I do with one placement, the (more points) you get!"), 0.3f);
+            this.StartCoroutine(() => ShowText("The (more jumps) I do with one placement, the (more points) you get!"), 0.3f);
 
         if (move == 4)
         {
