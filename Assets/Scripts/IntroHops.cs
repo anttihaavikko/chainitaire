@@ -30,6 +30,6 @@ public class IntroHops : MonoBehaviour
         Tweener.Instance.MoveTo(dude, points[spot].position, 0.25f, 0.06f, TweenEasings.QuadraticEaseInOut);
         anim.SetTrigger("jump");
 
-		Invoke("Hop", Random.Range(0.8f, 2f));
+		Invoke("Hop", Random.Range(1f, 2f));
 	}
 }
