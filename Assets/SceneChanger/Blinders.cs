@@ -33,8 +33,9 @@ public class Blinders : MonoBehaviour
 
         if(AudioManager.Instance)
         {
-            AudioManager.Instance.PlayEffectAt(18, Vector3.zero, 0.302f);
-            AudioManager.Instance.PlayEffectAt(19, Vector3.zero, 0.514f);
+            AudioManager.Instance.PlayEffectAt(12, Vector3.zero, 1.107f);
+            AudioManager.Instance.PlayEffectAt(14, Vector3.zero, 1.177f);
+            AudioManager.Instance.PlayEffectAt(19, Vector3.zero, 1.348f);
         }
 
         Invoke("Clang", duration * 0.9f);
@@ -49,8 +50,9 @@ public class Blinders : MonoBehaviour
 
         if(AudioManager.Instance)
         {
-            AudioManager.Instance.PlayEffectAt(18, Vector3.zero, 0.302f);
-            AudioManager.Instance.PlayEffectAt(19, Vector3.zero, 0.514f);
+            AudioManager.Instance.PlayEffectAt(12, Vector3.zero, 1.107f);
+            AudioManager.Instance.PlayEffectAt(14, Vector3.zero, 1.177f);
+            AudioManager.Instance.PlayEffectAt(19, Vector3.zero, 1.348f);
         }
 
         isOpen = true;
@@ -65,9 +67,12 @@ public class Blinders : MonoBehaviour
     {
         if (AudioManager.Instance)
         {
-            AudioManager.Instance.PlayEffectAt(34, Vector3.zero, 1.322f);
-            AudioManager.Instance.PlayEffectAt(33, Vector3.zero, 1.273f);
-            AudioManager.Instance.PlayEffectAt(31, Vector3.zero, 1.192f);
+            AudioManager.Instance.PlayEffectAt(11, Vector3.zero, 1.193f);
+            AudioManager.Instance.PlayEffectAt(19, Vector3.zero, 1.159f);
+            AudioManager.Instance.PlayEffectAt(21, Vector3.zero, 1.322f);
+            AudioManager.Instance.PlayEffectAt(22, Vector3.zero, 1.284f);
+            AudioManager.Instance.PlayEffectAt(15, Vector3.zero, 1.511f);
+            AudioManager.Instance.PlayEffectAt(3, Vector3.zero, 1.605f);
         }
 
     }

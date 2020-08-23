@@ -30,6 +30,24 @@ public class IntroHops : MonoBehaviour
         Tweener.Instance.MoveTo(dude, points[spot].position, 0.25f, 0.06f, TweenEasings.QuadraticEaseInOut);
         anim.SetTrigger("jump");
 
-		Invoke("Hop", Random.Range(1f, 2f));
+        JumpSound(0.25f);
+        this.StartCoroutine(() => LandSound(0.25f), 0.5f);
+
+        Invoke("Hop", Random.Range(1f, 2f));
 	}
+
+    public void JumpSound(float volume = 1f)
+    {
+        AudioManager.Instance.PlayEffectAt(13, dude.position, 0.94f * volume);
+        AudioManager.Instance.PlayEffectAt(14, dude.position, 1.091f * volume);
+        AudioManager.Instance.PlayEffectAt(20, dude.position, 1.657f * volume);
+        AudioManager.Instance.PlayEffectAt(2, dude.position, 1f);
+    }
+
+    public void LandSound(float volume = 1f)
+    {
+        AudioManager.Instance.PlayEffectAt(15, dude.position, 1.648f * volume);
+        AudioManager.Instance.PlayEffectAt(21, dude.position, 1.511f * volume);
+        AudioManager.Instance.PlayEffectAt(22, dude.position, 1.474f * volume);
+    }
 }

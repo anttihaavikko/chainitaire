@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -914,6 +914,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!61 &119976936
 BoxCollider2D:
@@ -1269,6 +1270,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!61 &168081634
 BoxCollider2D:
@@ -1879,6 +1881,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!114 &257753189
 MonoBehaviour:
@@ -2188,6 +2191,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 0
   text: {fileID: 0}
 --- !u!1 &299163991
 GameObject:
@@ -2820,6 +2824,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &410749886
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 735838804118164522, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735838804118164523, guid: 186159b302f6746c883de21227187992,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 186159b302f6746c883de21227187992, type: 3}
 --- !u!1 &428062809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3850,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!61 &577528215
 BoxCollider2D:
@@ -6557,6 +6631,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 1
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!114 &926856893
 MonoBehaviour:
@@ -6786,6 +6861,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!1 &965282576
 GameObject:
@@ -7136,6 +7212,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!61 &1037122154
 BoxCollider2D:
@@ -8427,6 +8504,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!1 &1184304297
 GameObject:
@@ -11110,6 +11188,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!114 &1591788255
 MonoBehaviour:
@@ -11502,6 +11581,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!114 &1616227653
 MonoBehaviour:
@@ -12948,6 +13028,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 0
   text: {fileID: 0}
 --- !u!114 &1803489329
 MonoBehaviour:
@@ -13775,6 +13856,7 @@ MonoBehaviour:
   hideDelay: 0
   silent: 0
   hiddenOnWeb: 0
+  soundOnZero: 1
   text: {fileID: 0}
 --- !u!1 &1899111417
 GameObject:

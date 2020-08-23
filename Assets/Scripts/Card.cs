@@ -52,6 +52,10 @@ public class Card : MonoBehaviour
         if (locked)
             return;
 
+        AudioManager.Instance.PlayEffectAt(0, transform.position, 0.687f);
+        AudioManager.Instance.PlayEffectAt(1, transform.position, 1.416f);
+        AudioManager.Instance.PlayEffectAt(7, transform.position, 1.485f);
+
         deck.dude.HideBubble();
 
         holding = true;
@@ -115,7 +119,13 @@ public class Card : MonoBehaviour
 
                 holding = false;
 
-                if(deck.dude.HasMessage())
+                AudioManager.Instance.PlayEffectAt(12, transform.position, 1f);
+                AudioManager.Instance.PlayEffectAt(14, transform.position, 0.494f);
+                AudioManager.Instance.PlayEffectAt(13, transform.position, 0.302f);
+                AudioManager.Instance.PlayEffectAt(19, transform.position, 1.373f);
+                AudioManager.Instance.PlayEffectAt(20, transform.position, 1.502f);
+
+                if (deck.dude.HasMessage())
                     deck.dude.ShowBubble();
 
                 return;
@@ -139,6 +149,12 @@ public class Card : MonoBehaviour
                 MoveTo(deck.spawnPoint.position);
             }
 
+            AudioManager.Instance.PlayEffectAt(12, transform.position, 1f);
+            AudioManager.Instance.PlayEffectAt(14, transform.position, 0.494f);
+            AudioManager.Instance.PlayEffectAt(13, transform.position, 0.302f);
+            AudioManager.Instance.PlayEffectAt(19, transform.position, 1.373f);
+            AudioManager.Instance.PlayEffectAt(20, transform.position, 1.502f);
+
             holding = false;
 
             if(deck.dude.HasMessage())
@@ -152,7 +168,12 @@ public class Card : MonoBehaviour
 
         bonus = Physics2D.OverlapCircle(p, 0.1f, deck.board.bonusLayer)?.GetComponent<Bonus>();
 
-        if(!bonus)
+        AudioManager.Instance.PlayEffectAt(0, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(1, transform.position, 1.476f);
+        AudioManager.Instance.PlayEffectAt(2, transform.position, 1.302f);
+        AudioManager.Instance.PlayEffectAt(4, transform.position, 1.494f);
+
+        if (!bonus)
         {
             var trigger = GetComponent<EventTrigger>();
             Destroy(trigger);

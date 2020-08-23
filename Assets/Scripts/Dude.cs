@@ -26,8 +26,8 @@ public class Dude : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.Lowpass(false);
         scale = transform.localScale.x;
-
         this.StartCoroutine(() => ShowText("Hey! Could you build me (a platform) from those (cards)."), 1.5f);
     }
 
@@ -74,9 +74,14 @@ public class Dude : MonoBehaviour
             if(best)
             {
                 Tweener.Instance.MoveTo(transform, best.transform.position, 0.25f, 0.06f, TweenEasings.QuadraticEaseInOut);
+                anim.SetTrigger("jump");
+
+                this.StartCoroutine(() => LandSound(), 0.5f);
+
+                JumpSound();
+
                 suit = best.GetSuit();
                 value = best.GetValue();
-                anim.SetTrigger("jump");
 
                 var diff = best.transform.position.x - transform.position.x;
                 if (Mathf.Abs(diff) > 0.5f)
@@ -88,12 +93,13 @@ public class Dude : MonoBehaviour
 
                 Invoke("TryMove", 0.7f);
 
+                var bonus = best.HasBonus();
+
                 this.StartCoroutine(() =>
                 {
                     comboDisplay.Show();
 
                     var amt = best.GetValue();
-                    var bonus = best.HasBonus();
                     var addition = amt * combo * (bonus ? 10 : 1);
                     score += addition;
                     comboScore.Add(addition);
@@ -103,6 +109,16 @@ public class Dude : MonoBehaviour
                         if (bonus) text += "<size=3> x 10</size>";
                         EffectManager.Instance.AddText(text, transform.position + Vector3.up * 0.2f);
                     }, 0.25f);
+
+                    if (bonus)
+                    {
+                        AudioManager.Instance.PlayEffectAt(3, transform.position, 1.44f);
+                        AudioManager.Instance.PlayEffectAt(6, transform.position, 1.215f);
+                        AudioManager.Instance.PlayEffectAt(8, transform.position, 1f);
+                        AudioManager.Instance.PlayEffectAt(16, transform.position, 1.388f);
+                        AudioManager.Instance.PlayEffectAt(18, transform.position, 1.534f);
+                        AudioManager.Instance.PlayEffectAt(11, transform.position, 1.15f);
+                    }
 
                     this.StartCoroutine(() => {
                         cam.BaseEffect(bonus ? 0.25f : 0.1f);
@@ -162,8 +178,11 @@ public class Dude : MonoBehaviour
 
         if(spots.Count() == 4)
         {
+            AudioManager.Instance.Lowpass();
+
             anim.SetTrigger("die");
             Invoke("Die", 0.4f);
+            Invoke("DieSound", 0.5f);
 
             this.StartCoroutine(() => {
                 cam.BaseEffect(0.1f);
@@ -173,6 +192,7 @@ public class Dude : MonoBehaviour
             this.StartCoroutine(() => {
                 cam.BaseEffect(0.2f);
                 gameOverTexts[1].Show();
+                Invoke("DieSound", 0.1f);
             }, 1.5f);
 
             this.StartCoroutine(() => {
@@ -295,5 +315,30 @@ public class Dude : MonoBehaviour
         {
             rankDisplay.text.text = ScoreManager.Instance.GetRank();
         }
+    }
+
+    public void JumpSound(float volume = 1f)
+    {
+        AudioManager.Instance.PlayEffectAt(13, transform.position, 0.94f * volume);
+        AudioManager.Instance.PlayEffectAt(14, transform.position, 1.091f * volume);
+        AudioManager.Instance.PlayEffectAt(20, transform.position, 1.657f * volume);
+        AudioManager.Instance.PlayEffectAt(2, transform.position, 1f);
+    }
+
+    public void LandSound(float volume = 1f)
+    {
+        AudioManager.Instance.PlayEffectAt(15, transform.position, 1.648f * volume);
+        AudioManager.Instance.PlayEffectAt(21, transform.position, 1.511f * volume);
+        AudioManager.Instance.PlayEffectAt(22, transform.position, 1.474f * volume);
+    }
+
+    public void DieSound()
+    {
+        AudioManager.Instance.PlayEffectAt(11, transform.position, 1.193f);
+        AudioManager.Instance.PlayEffectAt(19, transform.position, 1.159f);
+        AudioManager.Instance.PlayEffectAt(21, transform.position, 1.322f);
+        AudioManager.Instance.PlayEffectAt(22, transform.position, 1.284f);
+        AudioManager.Instance.PlayEffectAt(15, transform.position, 1.511f);
+        AudioManager.Instance.PlayEffectAt(3, transform.position, 1.605f);
     }
 }

@@ -111,12 +111,10 @@ public class SpeechBubble : MonoBehaviour {
 
             SetText(msg);
 
-            if (messagePos == 1 || letter == " ") {
-                //AudioManager.Instance.PlayEffectAt(13, transform.position, 1.089f);
-                //AudioManager.Instance.PlayEffectAt(28, transform.position, 0.875f);
-                //AudioManager.Instance.PlayEffectAt(33, transform.position, 0.726f);
-
-                //AudioManager.Instance.PlayEffectAt(Random.Range(0, 10) + soundOffset, transform.position, 1f);
+            if (messagePos == 1 || letter == " " || letter == "." || letter == "!") {
+                AudioManager.Instance.PlayEffectAt(14, transform.position, 1.325f);
+                AudioManager.Instance.PlayEffectAt(15, transform.position, 1.245f);
+                AudioManager.Instance.PlayEffectAt(16, transform.position, 1.545f);
             }
 
             if (messagePos >= message.Length) {
@@ -147,6 +145,12 @@ public class SpeechBubble : MonoBehaviour {
         Tweener.Instance.ScaleTo(transform, shownSize, 0.6f, 0f, TweenEasings.BounceEaseOut);
         shown = true;
         gameObject.SetActive(true);
+
+        AudioManager.Instance.PlayEffectAt(21, transform.position, 1.356f);
+        AudioManager.Instance.PlayEffectAt(20, transform.position, 1.362f);
+        AudioManager.Instance.PlayEffectAt(19, transform.position, 1.362f);
+
+        AudioManager.Instance.Highpass();
     }
 
     public void ShowMessage(string str, bool colors = true) {
@@ -156,14 +160,9 @@ public class SpeechBubble : MonoBehaviour {
 
         Show();
 
-        //AudioManager.Instance.PlayEffectAt(9, transform.position, 1f);
-        //AudioManager.Instance.PlayEffectAt(27, transform.position, 0.7f);
-
         useColors = colors;
 
-        //AudioManager.Instance.Highpass ();
-
-		done = false;
+        done = false;
 		message = str;
 		textArea.text = "";
 
@@ -210,10 +209,11 @@ public class SpeechBubble : MonoBehaviour {
         Tweener.Instance.ScaleTo(transform, hiddenSize, 0.3f, 0f, TweenEasings.QuadraticEaseOut);
         Invoke("DisableAfterDelay", 0.3f);
 
-        //AudioManager.Instance.Highpass (false);
+        AudioManager.Instance.Highpass(false);
 
-        //AudioManager.Instance.PlayEffectAt (9, transform.position, 1f);
-        //AudioManager.Instance.PlayEffectAt(27, transform.position, 0.7f);
+        AudioManager.Instance.PlayEffectAt(21, transform.position, 1.356f);
+        AudioManager.Instance.PlayEffectAt(20, transform.position, 1.362f);
+        AudioManager.Instance.PlayEffectAt(19, transform.position, 1.362f);
 
         shown = false;
 		//textArea.text = "";
